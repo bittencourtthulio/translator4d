@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://lh3.googleusercontent.com/ZQR85mP4pYb8IVuUFX0AEwN_u-ypudSto_PhAFjKhz-QUm6TMpzvnckHvK5YHN9sKhXjdsdc8q9ZMIyZnXwNWxaaNFXgNo8r4LYSaQ">
-    <img alt="AWS" height="150" src="https://lh3.googleusercontent.com/ZQR85mP4pYb8IVuUFX0AEwN_u-ypudSto_PhAFjKhz-QUm6TMpzvnckHvK5YHN9sKhXjdsdc8q9ZMIyZnXwNWxaaNFXgNo8r4LYSaQ">
+  <a href="https://www.argotrans.com/wp-content/uploads/2019/04/google_translate_logo.jpg">
+    <img alt="AWS" src="https://www.argotrans.com/wp-content/uploads/2019/04/google_translate_logo.jpg">
   </a>  
 </p><br>
 <p align="center">
