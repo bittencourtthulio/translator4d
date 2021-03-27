@@ -4,7 +4,7 @@
   </a>  
 </p><br>
 <p align="center">
-  <b>AWS4Delphi</b> é uma biblioteca Delphi desenvolvida para consumo dos recursos de APIs de Tradução, dando a possibilidade de tradução simples no seu sistema. Atualmente homologado apenas o serviço de tradução do Google, porém com possibilidade de expansão, fique a vontade para enviar suas contribuições.
+  <b>Translator4D</b> é uma biblioteca Delphi desenvolvida para consumo dos recursos de APIs de Tradução, dando a possibilidade de tradução simples no seu sistema. Atualmente homologado apenas o serviço de tradução do Google, porém com possibilidade de expansão, fique a vontade para enviar suas contribuições.
 
 # Translator4D
 Biblioteca para trabalhar com Recursos de Tradução no Delphi
