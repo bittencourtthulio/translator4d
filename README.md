@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.pngitem.com/pimgs/m/175-1759149_aws-amazon-hd-png-download.png">
-    <img alt="AWS" height="150" src="https://www.pngitem.com/pimgs/m/175-1759149_aws-amazon-hd-png-download.png">
+  <a href="https://lh3.googleusercontent.com/ZQR85mP4pYb8IVuUFX0AEwN_u-ypudSto_PhAFjKhz-QUm6TMpzvnckHvK5YHN9sKhXjdsdc8q9ZMIyZnXwNWxaaNFXgNo8r4LYSaQ">
+    <img alt="AWS" height="150" src="https://lh3.googleusercontent.com/ZQR85mP4pYb8IVuUFX0AEwN_u-ypudSto_PhAFjKhz-QUm6TMpzvnckHvK5YHN9sKhXjdsdc8q9ZMIyZnXwNWxaaNFXgNo8r4LYSaQ">
   </a>  
 </p><br>
 <p align="center">
