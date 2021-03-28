@@ -2,7 +2,7 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 475
+  ClientHeight = 514
   ClientWidth = 449
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -22,7 +23,7 @@ object Form2: TForm2
   end
   object Label2: TLabel
     Left = 8
-    Top = 360
+    Top = 409
     Width = 424
     Height = 33
     AutoSize = False
@@ -77,7 +78,7 @@ object Form2: TForm2
   end
   object Button1: TButton
     Left = 8
-    Top = 399
+    Top = 448
     Width = 424
     Height = 58
     Caption = 'Traduzir'
@@ -91,5 +92,14 @@ object Form2: TForm2
     Height = 21
     TabOrder = 5
     Text = 'INSIRA SUA CHAVE GOOGLE API AQUI'
+  end
+  object CheckBox1: TCheckBox
+    Left = 8
+    Top = 368
+    Width = 97
+    Height = 17
+    Caption = 'Habilitar Cache'
+    TabOrder = 6
+    OnClick = CheckBox1Click
   end
 end

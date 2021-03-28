@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Translator4D.Interfaces;
 
 type
   TForm2 = class(TForm)
@@ -16,9 +16,13 @@ type
     Edit3: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    CheckBox1: TCheckBox;
     procedure Button1Click(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    FTranslator4D : iTranslator4D;
   public
     { Public declarations }
   end;
@@ -37,8 +41,7 @@ procedure TForm2.Button1Click(Sender: TObject);
 begin
   Memo2.Lines.Clear;
   Memo2.Lines.Add(
-    TTranslator4D
-      .New
+    FTranslator4D
         .Google
           .Credential
             .Key(Edit3.Text)
@@ -50,6 +53,16 @@ begin
           .&End
         .Execute
   );
+end;
+
+procedure TForm2.CheckBox1Click(Sender: TObject);
+begin
+  FTranslator4D.Google.Options.Cache(CheckBox1.Checked);
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  FTranslator4D := TTranslator4D.New;
 end;
 
 end.

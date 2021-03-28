@@ -45,10 +45,18 @@ type
     function &End : iTranslator4DService;
   End;
 
+  iTranslator4DOptions = interface
+    ['{F52E6A39-AD4E-49CA-8C64-E5DE3D9EF763}']
+    function Cache(aValue : Boolean ) : iTranslator4DOptions; overload;
+    function Cache : Boolean; overload;
+    function &End : iTranslator4DService;
+  end;
+
   iTranslator4DService = interface
     ['{7736550F-A8D4-47A2-A2A1-74370EFAEA70}']
     function Credential : iTranslator4DCredential;
     function Params : iTranslator4DParams;
+    function Options : iTranslator4DOptions;
     function Execute : String;
   end;
 

@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{718FCC0B-6359-48E1-ABCA-44E130241A67}</ProjectGuid>
-        <MainSource>Translator4D.dpk</MainSource>
+        <MainSource>Translator4Delphi.dpk</MainSource>
         <ProjectVersion>19.2</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -46,7 +46,7 @@
         <GenPackage>true</GenPackage>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
-        <SanitizedProjectName>Translator4D</SanitizedProjectName>
+        <SanitizedProjectName>Translator4Delphi</SanitizedProjectName>
         <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\dataset-serialize\src;modules\localcache4d\samples\LocalCache4D;modules\localcache4d\src;modules\restrequest4delphi\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -89,6 +89,8 @@
         <DCCReference Include="src\Translator4D.Google.pas"/>
         <DCCReference Include="src\Translator4D.Interfaces.pas"/>
         <DCCReference Include="src\Translator4D.Params.pas"/>
+        <DCCReference Include="src\Translator4D.pas"/>
+        <DCCReference Include="src\Translator4D.Options.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -107,7 +109,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">Translator4D.dpk</Source>
+                    <Source Name="MainSource">Translator4Delphi.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="3">
@@ -126,9 +128,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\Translator4D.bpl" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\Translator4Delphi.bpl" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>Translator4D.bpl</RemoteName>
+                        <RemoteName>Translator4Delphi.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

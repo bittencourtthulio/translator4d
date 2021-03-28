@@ -11,12 +11,14 @@ type
     private
       FCredential : iTranslator4DCredential;
       FParams : iTranslator4DParams;
+      FOptions : iTranslator4DOptions;
     public
       constructor Create;
       destructor Destroy; override;
       class function New : iTranslator4DService;
       function Credential : iTranslator4DCredential;
       function Params : iTranslator4DParams;
+      function Options : iTranslator4DOptions;
       function Execute : String;
   end;
 
@@ -27,7 +29,9 @@ uses
   RESTRequest4D,
   Translator4D.Credential,
   Translator4D.Params,
-  LocalCache4D, System.SysUtils;
+  LocalCache4D,
+  System.SysUtils,
+  Translator4D.Options;
 
 { TBind4DTranslationGoogle }
 
@@ -35,6 +39,7 @@ constructor TTranslator4DGoogle.Create;
 begin
   FCredential := TTranslator4DCredential.New(Self);
   FParams := TTranslator4DParams.New(Self);
+  FOptions := TTranslator4DOptions.New(Self);
 end;
 
 function TTranslator4DGoogle.Credential: iTranslator4DCredential;
@@ -52,17 +57,22 @@ function TTranslator4DGoogle.Execute: String;
 var
   aJsonSend : TJsonObject;
   LResponse: IResponse;
-  aDataBaseName : String;
+  aInstanceName : String;
 begin
   if FParams.Source = FParams.Target then
   begin
     Result := FParams.Query;
     exit;
   end;
-  aDataBaseName := 'translate4d_'+FParams.Source+'_'+FParams.Target;
-  LocalCache.LoadDatabase(aDataBaseName);
-  LocalCache.TryGetItem(FParams.Query, Result);
-  if Trim(Result) <> '' then exit;
+
+  if FOptions.Cache then
+  begin
+    aInstanceName := 'translate4d_'+FParams.Source+'_'+FParams.Target;
+    LocalCache.LoadDatabase();
+    LocalCache.Instance(aInstanceName);
+    LocalCache.TryGetItem(FParams.Query, Result);
+    if Trim(Result) <> '' then exit;
+  end;
 
   aJsonSend := TJsonObject.Create;
   try
@@ -88,8 +98,12 @@ begin
             .GetValue<TJSONArray>('translations')
             .Items[0].GetValue<String>('translatedText');
 
-        LocalCache.SetItem(FParams.Query, Result);
-        LocalCache.SaveToStorage(aDataBaseName);
+        if FOptions.Cache then
+        begin
+          LocalCache.SetItem(FParams.Query, Result);
+          LocalCache.SaveToStorage();
+        end;
+
       except
         //
       end;
@@ -104,6 +118,11 @@ begin
   Result := Self.Create;
 end;
 
+
+function TTranslator4DGoogle.Options: iTranslator4DOptions;
+begin
+  Result := FOptions;
+end;
 
 function TTranslator4DGoogle.Params: iTranslator4DParams;
 begin
