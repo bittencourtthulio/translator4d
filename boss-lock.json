@@ -10,6 +10,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"https://github.com/bittencourtthulio/localcache4d": {
+			"name": "localcache4d",
+			"version": "1.0.1",
+			"hash": "aa0209716a9240a685b2700a6fe11582",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/viniciussanchez/restrequest4delphi": {
 			"name": "restrequest4delphi",
 			"version": "v3.0.5",

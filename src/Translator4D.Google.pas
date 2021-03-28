@@ -3,7 +3,8 @@ unit Translator4D.Google;
 interface
 
 uses
-  Translator4D.Interfaces;
+  Translator4D.Interfaces,
+  System.Generics.Collections;
 
 type
   TTranslator4DGoogle = class(TInterfacedObject, iTranslator4DService)
@@ -25,7 +26,8 @@ uses
   System.JSON,
   RESTRequest4D,
   Translator4D.Credential,
-  Translator4D.Params;
+  Translator4D.Params,
+  LocalCache4D, System.SysUtils;
 
 { TBind4DTranslationGoogle }
 
@@ -49,8 +51,19 @@ end;
 function TTranslator4DGoogle.Execute: String;
 var
   aJsonSend : TJsonObject;
-   LResponse: IResponse;
+  LResponse: IResponse;
+  aDataBaseName : String;
 begin
+  if FParams.Source = FParams.Target then
+  begin
+    Result := FParams.Query;
+    exit;
+  end;
+  aDataBaseName := 'translate4d_'+FParams.Source+'_'+FParams.Target;
+  LocalCache.LoadDatabase(aDataBaseName);
+  LocalCache.TryGetItem(FParams.Query, Result);
+  if Trim(Result) <> '' then exit;
+
   aJsonSend := TJsonObject.Create;
   try
     aJsonSend
@@ -67,12 +80,20 @@ begin
           .AddBody(aJsonSend.ToString)
         .Post;
 
-    Result :=
-      LResponse
-        .JSONValue
-          .GetValue<TJSONObject>('data')
-          .GetValue<TJSONArray>('translations')
-          .Items[0].GetValue<String>('translatedText');
+      try
+        Result :=
+        LResponse
+          .JSONValue
+            .GetValue<TJSONObject>('data')
+            .GetValue<TJSONArray>('translations')
+            .Items[0].GetValue<String>('translatedText');
+
+        LocalCache.SetItem(FParams.Query, Result);
+        LocalCache.SaveToStorage(aDataBaseName);
+      except
+        //
+      end;
+
   finally
     aJsonSend.Free;
   end;
