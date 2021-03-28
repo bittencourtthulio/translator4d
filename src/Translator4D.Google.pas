@@ -3,7 +3,8 @@ unit Translator4D.Google;
 interface
 
 uses
-  Translator4D.Interfaces;
+  Translator4D.Interfaces,
+  System.Generics.Collections;
 
 type
   TTranslator4DGoogle = class(TInterfacedObject, iTranslator4DService)
