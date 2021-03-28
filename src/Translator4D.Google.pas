@@ -51,6 +51,12 @@ var
   aJsonSend : TJsonObject;
    LResponse: IResponse;
 begin
+  if FParams.Source = FParams.Target then
+  begin
+    Result := FParams.Source;
+    exit;
+  end;
+
   aJsonSend := TJsonObject.Create;
   try
     aJsonSend
@@ -67,17 +73,12 @@ begin
           .AddBody(aJsonSend.ToString)
         .Post;
 
-      try
-        Result :=
-        LResponse
-          .JSONValue
-            .GetValue<TJSONObject>('data')
-            .GetValue<TJSONArray>('translations')
-            .Items[0].GetValue<String>('translatedText');
-      except
-        //
-      end;
-
+    Result :=
+      LResponse
+        .JSONValue
+          .GetValue<TJSONObject>('data')
+          .GetValue<TJSONArray>('translations')
+          .Items[0].GetValue<String>('translatedText');
   finally
     aJsonSend.Free;
   end;
