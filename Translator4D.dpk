@@ -30,11 +30,4 @@ package Translator4D;
 requires
   rtl;
 
-contains
-  Translator4D.Credential in 'src\Translator4D.Credential.pas',
-  Translator4D in 'src\Translator4D.pas',
-  Translator4D.Params in 'src\Translator4D.Params.pas',
-  Translator4D.Interfaces in 'src\Translator4D.Interfaces.pas',
-  Translator4D.Google in 'src\Translator4D.Google.pas';
-
 end.
