@@ -67,12 +67,17 @@ begin
           .AddBody(aJsonSend.ToString)
         .Post;
 
-    Result :=
-      LResponse
-        .JSONValue
-          .GetValue<TJSONObject>('data')
-          .GetValue<TJSONArray>('translations')
-          .Items[0].GetValue<String>('translatedText');
+      try
+        Result :=
+        LResponse
+          .JSONValue
+            .GetValue<TJSONObject>('data')
+            .GetValue<TJSONArray>('translations')
+            .Items[0].GetValue<String>('translatedText');
+      except
+        //
+      end;
+
   finally
     aJsonSend.Free;
   end;
