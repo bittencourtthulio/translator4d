@@ -1,8 +1,15 @@
 <p align="center">
-  <a href="https://www.argotrans.com/wp-content/uploads/2019/04/google_translate_logo.jpg">
-    <img alt="AWS" src="https://www.argotrans.com/wp-content/uploads/2019/04/google_translate_logo.jpg">
+  <a href="https://github.com/bittencourtthulio/translator4d/blob/main/assets/logo.fw.png">
+    <img alt="router4d" src="https://github.com/bittencourtthulio/translator4d/blob/main/assets/logo.fw.png">
   </a>  
-</p><br>
+</p>
+<br>
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/bittencourtthulio/translator4d?style=flat-square">
+  <img src="https://img.shields.io/github/stars/bittencourtthulio/translator4d?style=flat-square">
+  <img src="https://img.shields.io/github/contributors/bittencourtthulio/translator4d?color=orange&style=flat-square">
+</p>
+
 <p align="center">
   <b>Translator4D</b> é uma biblioteca Delphi desenvolvida para consumo dos recursos de APIs de Tradução, dando a possibilidade de tradução simples no seu sistema. Atualmente homologado apenas o serviço de tradução do Google, porém com possibilidade de expansão, fique a vontade para enviar suas contribuições.
 
