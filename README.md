@@ -8,6 +8,9 @@
   <img src="https://img.shields.io/github/v/release/bittencourtthulio/translator4d?style=flat-square">
   <img src="https://img.shields.io/github/stars/bittencourtthulio/translator4d?style=flat-square">
   <img src="https://img.shields.io/github/contributors/bittencourtthulio/translator4d?color=orange&style=flat-square">
+  <img src="https://tokei.rs/b1/github/bittencourtthulio/translator4d?color=red&category=lines">
+  <img src="https://tokei.rs/b1/github/bittencourtthulio/translator4d?color=green&category=code">
+  <img src="https://tokei.rs/b1/github/bittencourtthulio/translator4d?color=yellow&category=files">
 </p>
 
 <p align="center">
