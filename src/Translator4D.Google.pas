@@ -65,6 +65,13 @@ begin
     exit;
   end;
 
+  if (Trim(FParams.Source) = '') or
+     (Trim(FParams.Target) = '') then
+  begin
+    Result := FParams.Query;
+    exit;
+  end;
+
   if FOptions.Cache then
   begin
     aInstanceName := 'translate4d_'+FParams.Source+'_'+FParams.Target;
